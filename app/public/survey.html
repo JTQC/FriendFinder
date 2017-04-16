@@ -14,55 +14,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
 		<!-- Script to pull data from survey -->
-		<script>
-		
-		function myFunction(element) {
-
-		var name = $("#name").val;
-		var photo = $("#photo").val;	
-		//==========================================
-		//Creating an Array from our user's Choices
-		//==========================================
-			var newArray = [];
-			
-			for( i= 1; i <= element; i++){
-				var sel = 'sel' + i;
-				var select = document.getElementById(sel);
-				for( var j = 0; j < select.length; j++) {
-					if( select[j].selected) {
-						newArray.push(select.value);
-					}
-				}
-			}
-		console.log(newArray);
-		
-
-		//==========================================
-		//Parsing the Array into Integers
-		//==========================================
-		var result = newArray.map(function (x) {
-			return parseInt(x, 10);
-		});
-
-		console.log(result);
-
-		//==========================================
-		//Adding the numbers up to one sum
-		//==========================================
-		function getSum(total, num) {
-			return total + num;
-		}
-		function sumFunction(item) {
-			return result.reduce(getSum);
-		}
-		
-		console.log(sumFunction());
-		
-		console.log(name);
-		console.log(photo);
-		};
-		
-		</script>
+		<script type = "text/javascript" src="app.js"></script>
 
 		<title>Friend Finder Survey</title>
 
@@ -87,12 +39,12 @@
 		<form>
 			<div class="form-group">
 				<label for="name">Name (Required)</label>
-				<input type="name" class="form-control" id="name">
+				<input type="text" class="form-control" id="name">
 			</div>
 
 			<div class="form-group">
 				<label for="photo">Link to Photo Image (Required)</label>
-				<input type="photo" class="form-control" id="photo">
+				<input type="text" class="form-control" id="photo">
 			</div>
 		</form>	
 
